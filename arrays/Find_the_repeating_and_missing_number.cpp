@@ -67,25 +67,20 @@ public:
 
     vector<int> findMissingRepeatingNumbers2(vector<int> nums){
         int n=nums.size();
-        ll sum = (n*(n+1))/2;
-        ll sum_of_square=(n*(n+1)*(2*n+1))/6;
-        ll curr_sum=0,curr_sum_of_square=0;
+        ll sum=(n*(n+1))/2;
+        ll sum_sq=(n*(n+1)*(2*n+1))/6;
+
+        ll curr_sum=0,curr_sum_sq=0;
         for(int i=0;i<n;i++){
             curr_sum+=nums[i];
-            curr_sum_of_square+= (ll)nums[i]*(ll)nums[i];
+            curr_sum_sq+=(nums[i]*nums[i]);
         }
-
-        ll equation1= sum - curr_sum; // missing - repeating
-        ll equation2= sum_of_square - curr_sum_of_square; // missing^2 - repeating^2
-        // missing^2 - repeating^2 = (missing - repeating)(missing + repeating)
-        // equation2 = equation1 * (missing + repeating)
-        // missing + repeating = equation2 / equation1
-        ll sum_of_missing_and_repeating = equation2 / equation1;
-
-        ll missing = (equation1 + sum_of_missing_and_repeating) / 2;
-        ll repeating = sum_of_missing_and_repeating - missing;
-
-        return {(int)repeating,(int)missing};
+        // x - miss y repeat
+        ll y_minus_x=curr_sum-sum;
+        ll y_plus_x =(curr_sum_sq-sum_sq)/y_minus_x;
+        ll y=(y_minus_x+y_plus_x)/2;
+        ll x=y_plus_x-y;
+        return {(int)y,(int)x};
     }
 };
 
