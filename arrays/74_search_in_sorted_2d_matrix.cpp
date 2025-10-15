@@ -7,7 +7,9 @@ using namespace std;
 // if the target is less than the current element then we can move left
 // if we find the target then we can return true
 // if we reach the end of the matrix then we can return false
-// time complexity O(m+n)
+// time complexity O(m+n) explain time complexity
+// m is the number of rows and n is the number of columns
+// we can move at most m times down and n times left
 // space complexity O(1)
 
 class Solution
@@ -29,6 +31,31 @@ public:
             else if (target < matrix[i][j])
                 j--;
         }
+        return false;
+
+
+        // method-2 
+        // we can also do this by treating the 2D matrix as a 1D array
+        // and then performing binary search on it
+        // time complexity O(log(m*n))
+        // space complexity O(1)
+
+        int low=0;
+        int high=m*n-1;
+        while(low<=high){
+            int mid=low+(high-low)/2;
+            int i=mid/n;
+            int j=mid%n;
+            if(matrix[i][j]==target){
+                return true;
+            }
+            else if (matrix[i][j]>target){
+                high=mid-1;
+            }
+            else
+            low=mid+1;
+        }
+
         return false;
     }
 };
