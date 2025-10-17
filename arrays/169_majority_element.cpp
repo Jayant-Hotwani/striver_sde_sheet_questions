@@ -41,7 +41,7 @@ public:
 
 int main() {
     Solution sol;
-    vector<int> nums = {3,2,3};
+    vector<int> nums = {3,2,2,2,3};
     int result = sol.majorityElement(nums);
     std::cout << "Majority Element: " << result << std::endl;
     return 0;
