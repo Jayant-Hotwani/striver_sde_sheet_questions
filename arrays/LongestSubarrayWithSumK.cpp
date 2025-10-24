@@ -8,7 +8,7 @@ using namespace std;
 // time complexity : O(n)
 // space complexity : O(n)
 
-// optimal - two pointer approach works only for non-negative numbers
+// optimal - two pointer approach works only for non-negative numbers time complexity : O(2*n) space complexity : O(1)
 // but here we are using hashmap approach which works for negative numbers as well 
 
 class Solution {
