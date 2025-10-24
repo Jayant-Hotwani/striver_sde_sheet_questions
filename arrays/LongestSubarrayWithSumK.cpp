@@ -8,6 +8,9 @@ using namespace std;
 // time complexity : O(n)
 // space complexity : O(n)
 
+// optimal - two pointer approach works only for non-negative numbers
+// but here we are using hashmap approach which works for negative numbers as well 
+
 class Solution {
   public:
   
@@ -31,7 +34,26 @@ class Solution {
             mp[sum]=i;
         }
         return ans;
+
+        // 2 pointer approach - works only for non-negative numbers
+        /* int left=0; int right=0;
+        ll sum=0;
+        ll n=arr.size();
+        ll ans=0;
+        while(right<n){
+            sum+=arr[right];
+            while(sum>k){
+                sum-=arr[left];
+                left++;
+            }
+            if(sum==k){
+                ans=max(ans,right-left+1);
+            }
+            right++;
+        }
+        return ans;*/
     }
+
 };
 
 int main(){
