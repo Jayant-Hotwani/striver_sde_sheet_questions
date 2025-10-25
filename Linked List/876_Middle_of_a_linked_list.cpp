@@ -28,26 +28,27 @@ class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
 
-        // ListNode* slow=head;
-        // ListNode* fast=head;
-        // while(fast!=nullptr && fast->next !=nullptr ){
-        //     slow=slow->next;
-        //     fast=fast->next->next;
-        // }
-        // return slow;
+        // best optimal approach
+        ListNode* slow=head;
+        ListNode* fast=head;
+        while(fast!=nullptr && fast->next !=nullptr ){
+            slow=slow->next;
+            fast=fast->next->next;
+        }
+        return slow;
 
-        int count=0;
-        ListNode* temp=head;
-        while(temp!=NULL){
-            count++;
-            temp=temp->next;
-        }
-        int mid=count/2;
-        while(mid>0){
-            mid--;
-            head=head->next;
-        }
-        return head;
+        // int count=0;
+        // ListNode* temp=head;
+        // while(temp!=NULL){
+        //     count++;
+        //     temp=temp->next;
+        // }
+        // int mid=count/2;
+        // while(mid>0){
+        //     mid--;
+        //     head=head->next;
+        // }
+        // return head;
     }
 };
 
