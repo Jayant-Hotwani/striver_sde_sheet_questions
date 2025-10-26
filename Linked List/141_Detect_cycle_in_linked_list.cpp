@@ -17,11 +17,14 @@ public:
     ListNode *next;
     ListNode(int x) : val(x), next(nullptr) {}
 };
+
 // Time Complexity: O(n)
 // Space Complexity: O(1)
 // Detect cycle in linked list
 // Approach: Using Floyd's Cycle Detection Algorithm (Tortoise and Hare Algorithm)
 // Note: If there is a cycle, the fast and slow pointers will eventually meet.
+// If there is no cycle, the fast pointer will reach the end of the list.
+
 
 class Solution
 {
