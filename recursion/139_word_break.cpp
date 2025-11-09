@@ -42,6 +42,10 @@ public:
 
         return dp[index]=false;
     }
+    // very similar to palindrome partitioning
+    // Main function to check if the string can be segmented
+    // into dictionary words.
+    
     bool wordBreak(string s, vector<string>& wordDict) {
         memset(dp,-1,sizeof(dp));
         map<string,int>mp;
