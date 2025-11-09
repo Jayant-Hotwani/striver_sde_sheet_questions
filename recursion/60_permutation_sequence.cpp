@@ -44,19 +44,46 @@ public:
     // main function to get the kth permutation
     // calls the function to find all permutations
     // sorts them and returns the kth one
-    
-    string getPermutation(int n, int k) {
+
+    // string getPermutation(int n, int k) {
         
-        vector<string>v=find_all_perm(n,k);
-        sort(v.begin(),v.end(),mycmp);
-        return v[k-1];
+    //     vector<string>v=find_all_perm(n,k);
+    //     sort(v.begin(),v.end(),mycmp);
+    //     return v[k-1];
+    // }
+
+
+
+    // main function to get the kth permutation
+    
+     string getPermutation_optimized(int n, int k) {
+
+        string ans="";
+        int fact=1;
+        vector<int>numbers;
+        for(int i=1;i<n;i++){
+            numbers.push_back(i);
+            fact=fact*i;
+        }
+        numbers.push_back(n);
+
+        k=k-1;
+        while(1){
+            ans+=to_string(numbers[k/fact]);
+            numbers.erase(numbers.begin()+k/fact);
+            if(numbers.empty()) break;
+            k=k%fact;
+            fact=fact/numbers.size();
+        }
+        return ans;
     }
+
 };
 
 int main() {
     Solution sol;
     int n, k;
     cin >> n >> k;
-    cout << sol.getPermutation(n, k) << endl;
+    cout << sol.getPermutation_optimized(n, k) << endl;
     return 0;
 }
