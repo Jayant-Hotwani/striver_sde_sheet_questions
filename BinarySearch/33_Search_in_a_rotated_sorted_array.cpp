@@ -2,8 +2,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Problem: Search in Rotated Sorted Array
+// Link: https://leetcode.com/problems/search-in-rotated-sorted-array/
+// Difficulty: Medium
+// Tags: Array, Binary Search
 class Solution {
 public:
+    // Time Complexity: O(log n)
+    // Space Complexity: O(1)   
     int search(vector<int>& nums, int target) {
 
         // at any point of time 
