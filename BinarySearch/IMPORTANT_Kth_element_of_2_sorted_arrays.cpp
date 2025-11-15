@@ -54,8 +54,9 @@ class Solution {
         // left side contains k elements
         // then check for correct partitioning
         // if correct return max of left side
-        // else adjust binary search accordingly    
-        
+        // else adjust binary search accordingly
+        // replace k with (n1+1+n2+1)/2 for median finding previously solved
+        // problem
         if(n1>n2) return kthElement(b, a,k);
         int low = max((k-n2),0);
         int high = min(k,n1);
