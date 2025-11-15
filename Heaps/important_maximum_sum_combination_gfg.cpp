@@ -3,6 +3,15 @@ using namespace std;
 
 class Solution {
   public:
+  // Function to return k maximum sum combinations from two arrays.
+  // TC: O(k log k) SC: O(k)
+  // Approach: Sort both arrays in descending order. Use a max-heap to store the maximum sum combinations.
+  // Start with the largest elements from both arrays. Use a set to track visited index pairs
+  // to avoid duplicates. Extract the maximum sum from the heap, add it to the result,
+  // and push the next possible combinations into the heap until we have k sums.
+  // This ensures we efficiently get the top k sums without generating all combinations.
+  // Reference: https://www.geeksforgeeks.org/k-maximum-sum-combinations-two-arrays/
+  // https://www.youtube.com/watch?v=1g0hG8zz5mA
     vector<int> topKSumPairs(vector<int>& a, vector<int>& b, int k) {
         // code here
         vector<int>ans;
