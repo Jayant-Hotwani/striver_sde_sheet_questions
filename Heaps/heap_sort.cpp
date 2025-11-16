@@ -27,6 +27,10 @@ class Solution {
         // from n/2 to n-1 all are lead nodes 
         // they are already heap in themselves 
         // so no need of heapying them
+        // we need to heapify from n/2 -1 to 0
+        // as these are non leaf nodes
+        // time complexity of building heap is O(n)
+
         for(int i=(n/2)-1;i>=0;i--){
             heapify(heap,n,i);
         }
