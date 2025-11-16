@@ -35,6 +35,18 @@ class maxHeap {
         return;
     }
 
+    void changeKey(int ind, int val) {
+    if (ind < 0 || ind >= heap.size()) return;
+
+    int oldVal = heap[ind];
+    heap[ind] = val;
+
+    if (val > oldVal)
+        heapify_up(ind);
+    else
+        heapify_down(ind);
+}
+
     void push(int x) {
         // Insert x into the heap
         heap.push_back(x);
