@@ -23,6 +23,9 @@ struct TreeNode {
 };
 class Solution {
 public:
+
+        // o(n^2) solution
+
     int height(TreeNode* root){
         if(!root)return 0;
         int lh=height(root->left);
@@ -37,6 +40,23 @@ public:
 
         return isBalanced(root->left)&&isBalanced(root->right);
     }
+
+
+
+     // o(n) solution
+        int height(TreeNode* root){
+            if(!root) return 0;
+            int lh=height(root->left);
+            int rh=height(root->right);
+            if (lh==-1 || rh==-1) return -1;
+            if (abs(lh-rh)>1) return -1;
+            return 1+max(lh,rh);
+
+        }
+        bool isBalanced(TreeNode* root){
+            return height(root)!=-1;
+        }
+
 };
 
 int main() {
