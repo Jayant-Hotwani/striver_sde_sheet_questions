@@ -53,3 +53,41 @@ public:
 
     }
 };
+
+// without recursion 
+        // mark parent pointers 
+        // traverse upto root for one node and store in set 
+        // trvaerse upto root and check in set 
+
+// another approach iterative
+// class Solution { {
+// public:
+//     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+//         unordered_map<TreeNode*,TreeNode*> parent;
+//         parent[root]=NULL;
+//         queue<TreeNode*> q1;
+//         q1.push(root); 
+//         while (!q1.empty()) {
+//             TreeNode* curr = q1.front();
+//             q1.pop();
+//             if (curr->left) {
+//                 parent[curr->left] = curr;
+//                 q1.push(curr->left);
+//             }
+//             if (curr->right) {
+//                 parent[curr->right] = curr;
+//                 q1.push(curr->right);
+//             }
+//         }
+//         unordered_set<TreeNode*> ancestors;
+//         while (p) {
+//             ancestors.insert(p);
+//             p = parent[p];
+//         }
+//         while (q) {
+//             if (ancestors.count(q)) return q;
+//             q = parent[q];
+//         }
+//         return NULL;
+//     }
+// };
