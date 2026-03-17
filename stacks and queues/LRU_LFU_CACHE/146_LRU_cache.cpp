@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 class Node{
     public:
     int key;
@@ -67,10 +66,10 @@ public:
         else{
             // we need to delete soemthing and then add
             if (mp.size()>=cap){
-            Node* lru=tail->prev;
-            delete_node(lru);
-            Node* new_node=new Node(key,value);
-            insert_in_front(new_node);
+                Node* lru=tail->prev;
+                delete_node(lru);
+                Node* new_node=new Node(key,value);
+                insert_in_front(new_node);
             }
             else{
                 Node* new_node=new Node(key,value);

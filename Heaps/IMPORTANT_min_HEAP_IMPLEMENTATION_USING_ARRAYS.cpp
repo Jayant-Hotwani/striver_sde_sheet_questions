@@ -50,9 +50,9 @@ class minHeap {
     heap[ind] = val;
 
     if (val > oldVal)
-        heapify_up(ind);
-    else
         heapify_down(ind);
+    else
+        heapify_up(ind);
 }
     
 

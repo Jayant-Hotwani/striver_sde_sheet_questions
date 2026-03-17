@@ -90,7 +90,7 @@ public:
     }
 };
 
-int main(){
+int main(){ 
     Solution sol;
     int n;
     cin>>n;

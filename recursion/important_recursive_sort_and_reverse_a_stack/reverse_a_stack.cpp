@@ -24,7 +24,7 @@ class Solution {
         int x=st.top();
         st.pop();
         reverseStack(st);
-        // insert_correct_pos(st,x);
+        insert_correct_pos(st,x);
 
         // approach 2
         // or we can do using extra space also

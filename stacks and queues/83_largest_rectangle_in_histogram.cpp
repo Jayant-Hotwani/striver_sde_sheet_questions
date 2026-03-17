@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 class Solution {
 public:
     int largestRectangleArea(vector<int>& nums) {
@@ -30,28 +29,15 @@ public:
             st.push(i);
         }
 
-        for(auto x:smaller_on_left){
-            cout<<x<<" ";
-        }
-        cout<<endl;
-        for(auto x:smaller_on_right){
-            cout<<x<<" ";
-        }
-        cout<<endl;
-
         int ans=0;
         for(int i=0;i<n;i++){
-
             int L = smaller_on_left[i];
             int R = smaller_on_right[i];
-
             // we can take valued from l+1 to r-1 
             // if l==-1 then we can take evrything  so l+1=0 l=-1;
             // if r==-1 we can take evrthing on right upto n-1 so r=n;
-
             if (L == -1) L = -1;
             if (R == -1) R = n;
-
             int width = R - L - 1;
             ans=max(ans,nums[i]*width);
         }

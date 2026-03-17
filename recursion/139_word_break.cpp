@@ -25,7 +25,7 @@ public:
     
     bool dfs(int index,string s, map<string,int>& mp){
         if(index>=s.size()){
-            return dp[index]= true;
+            return true;
         }
 
         if (dp[index]!=-1){
