@@ -35,5 +35,9 @@ class Solution
 	    }
 	    
 	    return ans;
+
+		// how to detect a cycle via topological sort 
+		
+		// if (ans.size()!=n) that means cycle exits 
 	}
 };
